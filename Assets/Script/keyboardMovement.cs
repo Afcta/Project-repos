@@ -21,10 +21,10 @@ public class keyboardMovement : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
+        float inputZ = Input.GetAxis("Vertical");
         float curSpeedX = speedX * inputX;
-        float curSpeedZ = speedZ * inputY;
-        Vector3 mov = new Vector3(speedX * inputX, 0, speedZ * inputY);
+        float curSpeedZ = speedZ * inputZ;
+        Vector3 mov = transform.right * inputX + transform.forward * inputZ;
         mov = mov * Time.deltaTime;
         cController.Move(mov);
 
