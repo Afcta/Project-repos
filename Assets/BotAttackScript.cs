@@ -25,12 +25,12 @@ public class BotAttackScript : MonoBehaviour
     Quaternion RHighAttack2Rotation = Quaternion.Euler(-37f, 42f, -110f);
 
     Vector3[] positions = new Vector3[] { new Vector3(3.43f, 1.57f, -0.32f), new Vector3(3.67f, 1.36f, -0.93f), new Vector3(3.29f, 1.23f, -0.14f), new Vector3(3.74f, 1.23f, -0.71f),
-    new Vector3(3.4f, 1.04f, -0.41f), new Vector3(3.67f, 1.08f, -0.77f), new Vector3(3.43f, 1.57f, -0.32f), new Vector3(3.67f, 1.36f, -0.93f), new Vector3(3.29f, 1.23f, -0.14f),
-    new Vector3(3.74f, 1.23f, -0.71f), new Vector3(3.4f, 1.04f, -0.41f), new Vector3(3.67f, 1.08f, -0.77f)};
+    new Vector3(3.4f, 1.04f, -0.41f), new Vector3(3.67f, 1.08f, -0.77f), new Vector3(4.06f, 1.58f, -0.48f), new Vector3(4.08f, 1.50f, -0.52f), new Vector3(4.09f, 1.41f, -0.53f),
+    new Vector3(3.90f, 1.36f, -0.61f), new Vector3(4.01f, 1.07f, -0.50f), new Vector3(3.97f, -0.941f, -0.55f)};
 
     Quaternion[] rotations = new Quaternion[] { Quaternion.Euler(-11f, 93f, -13f), Quaternion.Euler(-37f, 42f, -110f), Quaternion.Euler(-9.4f, -231f, -82f), Quaternion.Euler(22f, -273f, -121f),
-    Quaternion.Euler(-21f, 160f, -140f), Quaternion.Euler(-20f, 54f, -130f), Quaternion.Euler(-11f, 93f, -13f), Quaternion.Euler(-37f, 42f, -110f), 
-    Quaternion.Euler(-9.4f, -231f, -82f), Quaternion.Euler(22f, -273f, -121f), Quaternion.Euler(-21f, 160f, -140f), Quaternion.Euler(-20f, 54f, -130f)};
+    Quaternion.Euler(-21f, 160f, -140f), Quaternion.Euler(-20f, 54f, -130f), Quaternion.Euler(34f, 120f, 20f), Quaternion.Euler(34f, 120f, -113f), 
+    Quaternion.Euler(76f, 100f, -6f), Quaternion.Euler(77f, 118f, -115f), Quaternion.Euler(54f, 219f, 112f), Quaternion.Euler(43f, 257f, 26f)};
 
     Vector3 RMedAttack1Position = new Vector3(3.29f, 1.23f, -0.14f);
     Quaternion RMedAttack1Rotation = Quaternion.Euler(-9.4f, -231f, -82f);
