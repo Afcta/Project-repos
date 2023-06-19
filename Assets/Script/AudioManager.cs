@@ -12,18 +12,28 @@ public class AudioManager : MonoBehaviour
         foreach(Sound s in sounds){
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
         }
         
     }
 
+    void Start ()
+    {
+        Play("Wind_Ambience");
+    }
+
     public void Play (string name)
     {
-        Sound s .Find(sounds, sound => sound.name = name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
         if(s == null){
             Debug.LogWarning("Sound: " + s + " not found !");
             return;
         }
         s.source.Play();
     }
+    // To play sounds, call method like this:
+    // FindObjectOfType<AudioManager>().Play("Whatever sound you wanna play");
 }
