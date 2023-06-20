@@ -18,7 +18,7 @@ public class BotGetAttack : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
+        AudioManager.Instance.PlaySFX("Ouch");
         //Play Hurt anim
         if(currentHealth <= 0)
         {
