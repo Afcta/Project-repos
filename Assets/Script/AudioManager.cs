@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,8 +11,6 @@ public class AudioManager : MonoBehaviour
 
     // To call: AudioManager.Instance.PlaySFX("Whatever) or PlayAmbiance("Whatever);
     public static AudioManager Instance;
-
-    public AudioMixer audioMixer;
 
     private void Awake() 
     {
