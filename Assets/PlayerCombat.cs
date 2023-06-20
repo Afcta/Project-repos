@@ -11,9 +11,13 @@ public class PlayerCombat : MonoBehaviour
     // at the end of sword
     [SerializeField] public Transform endHitPoint;
 
+    public BotGetAttack enemy;
+
     public int attackDamage = 40;
 
-    //i don't really understand this haha
+    //i don't really understand this haha 
+    //I think a layermask helps make physics area detectors ignore certain gameObjects
+    //and youll have to adjust that in the scene, on the layermask component
     public LayerMask enemyLayer;
 
 
@@ -36,7 +40,7 @@ public class PlayerCombat : MonoBehaviour
         //Play attack anim
         //animation not there yet, but this is the code:
         // animator.SetTrigger("Attack");
-        target.GetComponent<Enemy>().TakeDamage(attackDamage);
+        target.GetComponent<BotGetAttack>().TakeDamage(attackDamage);
         Debug.Log("Hit!");
 
 
