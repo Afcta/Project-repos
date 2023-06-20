@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
+    /* Maybe gonna be useful
     //is at beginning of sword
     [SerializeField] public Transform startHitPoint;
     // at the end of sword
@@ -65,12 +66,13 @@ public class PlayerCombat : MonoBehaviour
         //Play attack anim
         //animation not there yet, but this is the code:
         // animator.SetTrigger("Attack");
-        target.GetComponent<BotGetAttack>().TakeDamage(attackDamage);
+        target.GetComponent<Enemy>().TakeDamage(attackDamage);
         Debug.Log("Hit!");
 
 
 
     }
+    */
 
     public void OnJoystickButton(InputAction.CallbackContext context)
     {
