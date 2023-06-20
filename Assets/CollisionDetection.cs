@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CollisionDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject HitParticle;
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "Enemy")
+        {
+            Debug.Log("Hit !" + other.name);
+            // play enemy anim
+            // other.GetComponent<Animator>().SetTrigger("Hit!");
+            //particle
+            //Instantiate(HitParticle, new Vector3(other.transform.position.x, ...))
+
+
+        }
     }
 }
