@@ -22,6 +22,7 @@ public class PlayerCombat : MonoBehaviour
     InputAction blockSword;
 
     [SerializeField] float isHolding = 0f;
+    float attackCoolDown = 0f;
 
     //i don't really understand this haha 
     //I think a layermask helps make physics area detectors ignore certain gameObjects
@@ -45,13 +46,14 @@ public class PlayerCombat : MonoBehaviour
     {
         // detects hit by castin a line
         bool hasHit = Physics.Linecast(startHitPoint.position, endHitPoint.position, out RaycastHit hit, enemyLayer);
-        if(hasHit)
+        if(hasHit && attackCoolDown <= 0)
         {
             //object that was hit, is given to attack()
             GameObject target = hit.transform.gameObject;
             Attack(target);
+            attackCoolDown = 3f;
        }
-
+        attackCoolDown = attackCoolDown - Time.deltaTime;
 
         if (isHolding==1f)
         {
@@ -65,8 +67,9 @@ public class PlayerCombat : MonoBehaviour
         //Play attack anim
         //animation not there yet, but this is the code:
         // animator.SetTrigger("Attack");
-        target.GetComponent<BotGetAttack>().TakeDamage(attackDamage);
+        target.GetComponentInParent<BotGetAttack>().TakeDamage(attackDamage);
         Debug.Log("Hit!");
+        audios.Play();
 
 
 
