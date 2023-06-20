@@ -14,13 +14,31 @@ public class PlayerCombat : MonoBehaviour
     public BotGetAttack enemy;
 
     public int attackDamage = 40;
+    public AudioSource audios;
+
+    CharacterController playerController;
+
+    [SerializeField] InputActionAsset playerControls;
+    InputAction blockSword;
+
+    [SerializeField] float isHolding = 0f;
 
     //i don't really understand this haha 
     //I think a layermask helps make physics area detectors ignore certain gameObjects
     //and youll have to adjust that in the scene, on the layermask component
     public LayerMask enemyLayer;
 
+    private void Start()
+    {
+        var gameplayActionMap = playerControls.FindActionMap("Default");
 
+        blockSword = gameplayActionMap.FindAction("BlockSword");
+
+        blockSword.performed += OnJoystickButton;
+        blockSword.canceled += OnJoystickButton;
+
+        playerController = GetComponent<CharacterController>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -33,6 +51,13 @@ public class PlayerCombat : MonoBehaviour
             GameObject target = hit.transform.gameObject;
             Attack(target);
        }
+
+
+        if (isHolding==1f)
+        {
+            BlockSword();
+            audios.Play();
+        }
     }
 
     void Attack(GameObject target)
@@ -45,5 +70,15 @@ public class PlayerCombat : MonoBehaviour
 
 
 
+    }
+
+    public void OnJoystickButton(InputAction.CallbackContext context)
+    {
+        isHolding = context.ReadValue<float>();
+    }
+
+    void BlockSword()
+    {
+        Debug.Log("ISBLOCK");
     }
 }
