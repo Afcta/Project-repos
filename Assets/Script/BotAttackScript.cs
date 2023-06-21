@@ -15,7 +15,6 @@ public class BotAttackScript : MonoBehaviour
 
     float r;
     int right;
-    public bool attack = true;
 
     [SerializeField] bool transition1 = false;
     [SerializeField] bool transition2 = false;
@@ -70,11 +69,7 @@ public class BotAttackScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!attack)
-        {
-            attackPose(origPos, origRot);
-            return;
-        }
+
 
         if (!transition1) 
         { 
